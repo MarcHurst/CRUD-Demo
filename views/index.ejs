@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY APP</title>
+    <script defer src="/main.js"></script>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <section class='title-section'>
+        <h1>May the fluff be with you.</h1>
+    </section>
+    <section class="interface-row">
+        <section class="interface-section">
+            <h2>Add a new quote</h2>
+            <form action="/quotes" method="POST">
+                <input type="text" placeholder="name" name="name">
+                <input type="text" placeholder="quote" name="quote">
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section class="interface-section">
+            <div>
+                <h2>Cookie Time!!</h2>
+                <p>Replace the first Flight quote with a request for additional cookies.</p>
+                <button id="update-button">Go Hunting</button>
+            </div>
+        </section>
+        <section class="interface-section">
+            <div>
+                <h2>Blaspheymy Strikes!</h2>
+                <p>Deletes one Codex quote.  Does nothing if there are no more Codex quotes</p>
+                <button id="delete-button">Blaspheme</button>
+                <div id="message"></div>
+            </div>
+        </section>
+    </section>
+    <section class="quotes-section">
+        <h2> Quotes </h2>
+        <ul class="quotes">
+            <% for (let i = 0; i < quotes.length; i++) { %>
+                <li class="quote">
+                    <span class="speaker"><%= quotes[i].name %> </span>
+                    <span class="spoken"><%= quotes[i].quote %> </span>
+                </li>
+            <% } %> 
+        </ul>
+    </section>
+</body>
+</html>
